@@ -2,7 +2,7 @@
 
 | ID      | Descripció de la prova                           | Entrada                                                | Accions                                  | Resultat esperat                                        | Estat    |
 | ------- | ------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------- | -------- |
-| **P01** | Crear una nova comanda amb un sol producte       | Client: "Anna"; Prod: "Aigua"; Preu: 1.5; Quantitat: 1 | Seleccionar opció 1, introduir dades     | Es genera ticket amb subtotal 1.50 i total amb IVA 1.65 | Correcte |
+| **P01** | Crear una nova comanda amb un sol producte       | Client: "Eric"; Prod: "Aigua"; Preu: 1.5; Quantitat: 1 | Seleccionar opció 1, introduir dades     | Es genera ticket amb subtotal 1.50 i total amb IVA 1.65 | Correcte |
 | **P02** | Crear comanda amb 3 productes                    | Diverses entrades vàlides                              | Crear comanda amb 3 productes            | Es mostra tiquet amb 3 línies i total correcte          | Correcte |
 | **P03** | Sortir del menú                                  | Opció 4                                                | Seleccionar 4                            | El programa finalitza amb missatge "Fins la propera"    | Correcte |
 | **P04** | Actualitzar comanda sense haver-ne creat cap     | Opció 2                                                | Seleccionar 2                            | Mostra missatge "No hi ha cap comanda enregistrada"     | Correcte |
