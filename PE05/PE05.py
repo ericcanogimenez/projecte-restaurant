@@ -1,7 +1,7 @@
 import time
 
 def menu():
-    global producte, preu, quantitat, opcio
+    global producte, preu, quantitat, opcio, comanda_creada
     print("__________________________________________________\n")
     print("=========== GESTIÓ COMANDES RESTAURANT ===========")
     print("__________________________________________________\n")
@@ -11,30 +11,37 @@ def menu():
     print("4. Sortir")
 
     try:
-        opcio=int(input("> Tria una opció:" ))
+        opcio = int(input("> Tria una opció: "))
     except:
         print("Opció no vàlida")
-        menu()
-        return
+        return menu()
 
-    if opcio == 1:
-        crear()
-    if opcio == 2:
-        if not comanda_creada:
-            print("No hi ha cap comanda enregistrada")
-            time.sleep(2)
-            menu()
-            return
-        actualizar()
-    if opcio == 3:
-        if not comanda_creada:
-            print("No hi ha cap comanda enregistrada")
-            time.sleep(2)
-            menu()
-            return
-        visualitzar()
-    if opcio == 4:
-        sortir()
+    match opcio:
+        case 1:
+            crear()
+
+        case 2:
+            if not comanda_creada:
+                print("No hi ha cap comanda enregistrada")
+                time.sleep(2)
+                return menu()
+            actualizar()
+
+        case 3:
+            if not comanda_creada:
+                print("No hi ha cap comanda enregistrada")
+                time.sleep(2)
+                return menu()
+            visualitzar()
+
+        case 4:
+            sortir()
+
+        case _:
+            print("Opció no vàlida")
+            time.sleep(1)
+            return menu()
+
 
 def crear():
     global nom, producte, preu, quantitat, opcio, linea_producte, total, iva, total_iva, comanda_creada
